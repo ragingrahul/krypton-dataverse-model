@@ -1,0 +1,9 @@
+type user @createModel(accountRelation: LIST, description: "user") {
+  author: DID! @documentAccount
+  version: CommitID! @documentVersion
+  walletAddress: String! @string(maxLength: 100)
+  kryptonName: String! @string(maxLength: 100)
+  kryptonAddress: String! @string(maxLength: 100)
+  kryptonChainId: String! @string(maxLength: 20)
+  kryptonGuardianId: [String] @list(maxLength: 10000000) @string(maxLength: 100)
+}

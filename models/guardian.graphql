@@ -1,0 +1,8 @@
+type guardian @createModel(accountRelation: LIST, description: "guardian") {
+  author: DID! @documentAccount
+  version: CommitID! @documentVersion
+  name: String! @string(maxLength: 100)
+  walletAddress: String! @string(maxLength: 100)
+  kryptonChainId: String! @string(maxLength: 20)
+  kryptonGuardianId: [String] @list(maxLength: 10000000) @string(maxLength: 100)
+}
